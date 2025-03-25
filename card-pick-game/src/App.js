@@ -39,7 +39,7 @@ const LuckyPick = () => {
   
     // Wait for the card to flip back before resetting the number
     setTimeout(() => {
-      setSelectedCard(null); // Unselect the card (card will flip back)
+      setSelectedCard(null); // Unselect the card 
       
       // Wait for the card flip animation to complete, then reset the number
       setTimeout(() => {
@@ -50,7 +50,7 @@ const LuckyPick = () => {
           setRandomNumber(newNumber);
           resetCards(newNumber); // Reset the cards for the next round
         }
-      }, 500); // Delay to allow card to flip back (adjust if needed)
+      }, 500); // Delay to allow card to flip back 
     }, 1000); // Wait before flipping the card back
   };
   
