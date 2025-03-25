@@ -37,21 +37,19 @@ const LuckyPick = () => {
     const nextTurns = turns - 1;
     setTurns(nextTurns);
   
-    // Wait for the card to flip back before resetting the number
     setTimeout(() => {
-      setSelectedCard(null); // Unselect the card 
+      setSelectedCard(null);  
       
-      // Wait for the card flip animation to complete, then reset the number
       setTimeout(() => {
         if (nextTurns === 0) {
-          setGameOver(true); // Game over after all turns are used
+          setGameOver(true); 
         } else {
           const newNumber = generateRandomNumber();
           setRandomNumber(newNumber);
-          resetCards(newNumber); // Reset the cards for the next round
+          resetCards(newNumber); 
         }
-      }, 500); // Delay to allow card to flip back 
-    }, 1000); // Wait before flipping the card back
+      }, 500); 
+    }, 1000); 
   };
   
   
