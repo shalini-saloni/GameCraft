@@ -37,11 +37,8 @@ const LuckyPick = () => {
     const nextTurns = turns - 1;
     setTurns(nextTurns);
   
-    // Wait for the card to flip back before resetting the number
     setTimeout(() => {
-      setSelectedCard(null); // Unselect the card (card will flip back)
-      
-      // Wait for the card flip animation to complete, then reset the number
+      setSelectedCard(null); 
       setTimeout(() => {
         if (nextTurns === 0) {
           setGameOver(true); 
