@@ -1,17 +1,4 @@
-@media all and (max-width: 350px) {
-  .cards-container {
-    flex-direction: row;
-    justify-content: center;
-    padding: 0;
-    margin: 0 auto;
-  }
-  
-  .card {
-    width: 100px;
-    height: 150px;
-    margin: 2px;
-  }
-}body {
+body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
@@ -32,8 +19,7 @@
 .game-container {
   width: 100%;
   max-width: 800px;
-  padding: 15px 10px;
-  box-sizing: border-box;
+  padding: 15px 5px;
 }
 
 h1 {
@@ -59,50 +45,26 @@ h1 {
   color: yellow;
 }
 
+/* Cards container with forced row layout */
 .cards-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   margin-bottom: 20px;
-  max-width: 100%;
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding-bottom: 10px; /* Space for scrollbar */
 }
 
+/* Base card dimensions */
 .card {
-  width: 160px;
-  height: 260px;
+  flex: 0 0 auto; /* Prevent shrinking and growing */
+  width: 180px;
+  height: 280px;
   perspective: 1000px;
   cursor: pointer;
-  margin: 5px;
-  flex-shrink: 0;
-}
-
-@media (min-width: 1024px) {
-  .card {
-    width: 180px;
-    height: 280px;
-    margin: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .card {
-    width: 140px;
-    height: 220px;
-    margin: 5px;
-  }
-}
-
-@media (max-width: 400px) {
-  .card {
-    width: 80px;
-    height: 150px;
-    margin: 3px;
-  }
-  
-  .cards-container {
-    gap: 5px;
-  }
 }
 
 .card-inner {
@@ -165,16 +127,53 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
-  max-width: 100%;
 }
 
 .restart-btn:hover {
   background: #ffd700;
 }
 
-@media (max-height: 700px) {
-  .game-container {
-    padding: 10px 5px;
+/* Laptop and desktop */
+@media (min-width: 1024px) {
+  .card {
+    width: 200px;
+    height: 300px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .card {
+    width: 160px;
+    height: 240px;
+  }
+  
+  .cards-container {
+    gap: 8px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 640px) {
+  .card {
+    width: 140px;
+    height: 210px;
+  }
+  
+  .cards-container {
+    gap: 6px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .card {
+    width: 120px;
+    height: 180px;
+  }
+  
+  .cards-container {
+    gap: 5px;
   }
   
   h1 {
@@ -184,5 +183,17 @@ h1 {
   
   .level-display, .info-text, .score-box {
     margin-bottom: 10px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .card {
+    width: 100px;
+    height: 150px;
+  }
+  
+  .cards-container {
+    gap: 4px;
   }
 }
